@@ -2,7 +2,7 @@ import Card from '../Card/Card.jsx';
 
 export default function Cards(props) {
    const { characters } = props;
-   return <div style={{display:"flex", justifyContent:"space-around"}}>{characters.map(ob => <Card name={ob.name}
+   return <div style={{display:"flex",flexDirection: "column", justifyContent:"space-around"}}>{characters.map(ob => <Card name={ob.name}
       species={ob.species}
       gender={ob.gender}
       image={ob.image}

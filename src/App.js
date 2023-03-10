@@ -17,7 +17,7 @@ function App () {
         />
       </div>
       
-      <div>
+      <div style={{display:'grid'}}>
         <Cards
           characters={characters}
         />
