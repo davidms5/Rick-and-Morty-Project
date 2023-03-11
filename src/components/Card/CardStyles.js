@@ -7,7 +7,13 @@ export const DivCard = styled.div`
     background-color: rgba(255,255,255,0.8);
     &button {
         background-color: gold;
+        transition: all .2s ease-in-out;
+        &:hover {
+        transform: scale(1.5);
+        }
+
     }
+
 
     @media (max-width: 360px){
         margin-top: 20px;
