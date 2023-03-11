@@ -7,7 +7,15 @@ import characters, { Rick } from './data.js'
 function App () {
   return (
     <div className='App' style={{ padding: '25px' }}>
-      <div style={{display:"flex",justifyContent:"center", alignItems:"center", marginBottom:"3rem"}}>
+
+      <div>
+        <SearchBar
+          onSearch={(characterID) => window.alert(characterID)}
+        />
+      </div>
+      
+      <br/>
+      <div>
         <Card
           name={Rick.name}
           species={Rick.species}
@@ -17,17 +25,13 @@ function App () {
         />
       </div>
       
-      <div>
+      <div className='mazeCards'>
         <Cards
           characters={characters}
         />
       </div>
       <hr />
-      <div>
-        <SearchBar
-          onSearch={(characterID) => window.alert(characterID)}
-        />
-      </div>
+      
     </div>
   )
 }
