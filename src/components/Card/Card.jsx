@@ -8,7 +8,7 @@ export default function Card(props) {
          <h2>{name}</h2>
          <h2>{species}</h2>
          <h2>{gender}</h2>
-         <img src={image} alt={name} style={{ clipPath: "circle()", maxWidth: "75%", maxHeight:"75%"}}/>
+         <img src={image} alt={name} />
          
       </DivCard>
    );
