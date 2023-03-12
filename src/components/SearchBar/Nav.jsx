@@ -9,7 +9,7 @@ const Nav = (props) =>{
         <Navigate>
             <div style={{flexGrow:1}}>
             <h1 >busca algun personaje </h1>
-        <SearchBar onSearch={onSearch}/>
+        <SearchBar onSearch={(character) => onSearch(character)}/>
             </div>
         </Navigate>
     )

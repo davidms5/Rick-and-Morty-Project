@@ -7,6 +7,6 @@ export const DivImages = styled.div`
    align-content: flex-start;
    gap: 15px;
    
-   
+
      
 `;

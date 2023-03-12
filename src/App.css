@@ -8,8 +8,8 @@
 .mazeCards {
    display: flex;
    justify-content:center;
-   align-items:"center";
-   margin-bottom:"3rem";
+   align-items:center;
+   margin-bottom:3rem;
 
 }
 

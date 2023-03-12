@@ -5,22 +5,38 @@ import Cards from './components/Cards/Cards.jsx'
 //import characters, { Rick } from './data.js'
 import Nav from './components/SearchBar/Nav'
 
-const example = {
-  name: 'Morty Smith',
-  species: 'Human',
-  gender: 'Male',
-  image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-};
 
 function App () {
 
-  
 
   const [characters, setCharacters] = useState([])
 
-  function onSearch(element){
-    return setCharacters([...characters, element])
+  async function onSearch(element){
 
+      try {
+        const response = await fetch(`https://rickandmortyapi.com/api/character/${element}`);
+        const data = await response.json();
+
+        const filtro = characters.filter(char => char.id === data.id).length === 0 //filtro para verificar que no haya repetidos
+
+        if(data.name && filtro){
+          setCharacters([...characters, data]);
+
+        } else if(!filtro){
+          window.alert("no puede haber ID's repetidos");
+          
+        } else window.alert("no hay ningun personaje con ese ID");
+        
+      } catch (error) {
+        console.log(error)
+      }
+    
+    
+  }
+
+  function onClose(id){
+    const filtrado = characters.filter(character => character.id !== id);
+    setCharacters( filtrado)
   }
   return (
     <div className='App' style={{ padding: '25px' }}>
@@ -28,19 +44,19 @@ function App () {
       <img src='rick-morty-logo.png' alt='imagenes' style={{width:"100%", height:"auto", maxWidth:"800px"}}/>
       <div>
         <Nav
-          onSearch={() => onSearch(example)}
+          onSearch={onSearch}
+          
         />
       </div>
       
       <br/>
       
       <br/>
-        <div className='imagen'>
-        </div>
-
+    
       <div className='mazeCards'>
         <Cards
           characters={characters}
+          onClose={onClose}
         />
       </div>
       <hr />

@@ -10,6 +10,7 @@ export const DivCard = styled.div`
     transition: all .2s ease-in-out;
     flex-grow: 1;
     box-shadow: 0px 1px 8px 5px #17AF22;
+    max-width: 60%;
     
    overflow: hidden;
     
