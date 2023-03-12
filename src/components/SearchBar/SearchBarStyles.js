@@ -22,3 +22,16 @@ export const Search = styled.div`
         color: white;
     }
 `
+
+export const Navigate = styled.div`
+    display: flex;
+    justify-content: center;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    border-style: groove;
+    border-radius: 4%;
+    background-color: rgba(0, 100, 0, 0.8);
+    color: #000066;
+    
+`
