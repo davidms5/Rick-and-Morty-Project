@@ -10,6 +10,7 @@ function App () {
   return (
     <div className='App' style={{ padding: '25px' }}>
 
+      <img src='rick-morty-logo.png' alt='imagenes' style={{width:"100%", height:"auto", maxWidth:"800px"}}/>
       <div>
         <SearchBar
           onSearch={(characterID) => window.alert(characterID)}
@@ -26,9 +27,10 @@ function App () {
           onClose={() => window.alert('Emulamos que se cierra la card')}
         />
       </div> 
-      <img src='rick-morty-logo.png' alt='imagenes' style={{backgroundColor:"transparent"}}/>
       <br/>
-      
+        <div className='imagen'>
+        </div>
+
       <div className='mazeCards'>
         <Cards
           characters={characters}

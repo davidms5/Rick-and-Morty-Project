@@ -3,7 +3,9 @@ import { DivImages } from './CardsStyles.js';
 
 export default function Cards(props) {
    const { characters } = props;
-   return <DivImages >{characters.map(ob => <Card name={ob.name}
+   return <DivImages >
+      
+      {characters.map(ob => <Card name={ob.name}
       species={ob.species}
       gender={ob.gender}
       image={ob.image}
