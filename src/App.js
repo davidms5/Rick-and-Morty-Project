@@ -17,7 +17,7 @@ function App () {
       </div>
       
       <br/>
-      <div>
+      <div className="rick" style={{display:"flex"}}>
         <Card
           name={Rick.name}
           species={Rick.species}
@@ -25,7 +25,9 @@ function App () {
           image={Rick.image}
           onClose={() => window.alert('Emulamos que se cierra la card')}
         />
-      </div>
+      </div> 
+      <img src='rick-morty-logo.png' alt='imagenes' style={{backgroundColor:"transparent"}}/>
+      <br/>
       
       <div className='mazeCards'>
         <Cards

@@ -1,10 +1,10 @@
+import {Search} from './SearchBarStyles.js'
 export default function SearchBar(props) {
    return (
-      <div>
+      <Search>
          <input type="search" />
          <button onClick={() => props.onSearch("cosa")}>agregar</button>
-         {/* <input type='search' />
-      <button onClick={}>Agregar</button> */}
-      </div>
+         
+      </Search>
    );
 }
