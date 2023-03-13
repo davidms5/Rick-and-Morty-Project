@@ -6,6 +6,7 @@ export default function Cards(props) {
    return <DivImages >
       
       {characters.map(ob => <Card 
+      id={ob.id}
       name={ob.name}
       species={ob.species}
       gender={ob.gender}

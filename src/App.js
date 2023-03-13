@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import './App.css'
 import Cards from './components/Cards/Cards.jsx'
-//import SearchBar from './components/SearchBar/SearchBar.jsx'
-//import characters, { Rick } from './data.js'
+import { Route, Routes } from 'react-router-dom'
 import Nav from './components/SearchBar/Nav'
+import About from './components/About/About'
+import Detail from './components/Detail/Detail'
 
 
 function App () {
@@ -24,7 +25,7 @@ function App () {
 
         } else if(!filtro){
           window.alert("no puede haber ID's repetidos");
-          
+
         } else window.alert("no hay ningun personaje con ese ID");
         
       } catch (error) {
@@ -53,12 +54,20 @@ function App () {
       
       <br/>
     
-      <div className='mazeCards'>
+      <Routes>
+        <Route path='/About' element={<About/>}/>
+        <Route path='/Home' element={(<div className='mazeCards'>
         <Cards
           characters={characters}
           onClose={onClose}
         />
-      </div>
+      </div>)}/>
+
+        <Route path='/Detail/:detailId' element={<Detail/>}/>
+
+
+      </Routes>
+      
       <hr />
       
     </div>
