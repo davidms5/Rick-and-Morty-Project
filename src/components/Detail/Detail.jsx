@@ -22,6 +22,8 @@ function Detail() {
 
   }, [id])
 
+  //data.status?.origin => esto es un ejemplo para cuando traiga los datos de un objeto si esta data es una promise o un async await
+
   return (
     <div>Detail
       <h1>hola</h1>
