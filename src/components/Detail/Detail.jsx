@@ -18,7 +18,7 @@ function Detail() {
          window.alert('No hay personajes con ese ID');
       }
    }).catch(err => console.log(err);
-   return setCharacter({});
+   return setCharacter({}); // esta parte del codigo borra la data existente cuando el component se desmonta
 
   }, [id])
 
