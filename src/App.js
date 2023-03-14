@@ -5,8 +5,9 @@ import { Route, Routes } from 'react-router-dom'
 import Nav from './components/SearchBar/Nav'
 import About from './components/About/About'
 import Detail from './components/Detail/Detail'
+import Page404 from './components/Page404/Page404'
 
-
+//luego investigar bien que seria el Outlet en react router
 function App () {
 
 
@@ -39,6 +40,13 @@ function App () {
     const filtrado = characters.filter(character => character.id !== id);
     setCharacters( filtrado)
   }
+
+  const start = (<div className='mazeCards'>
+  <Cards
+    characters={characters}
+    onClose={onClose}
+  />
+</div>)
   return (
     <div className='App' style={{ padding: '25px' }}>
 
@@ -55,7 +63,10 @@ function App () {
       <br/>
     
       <Routes>
-        <Route path='/About' element={<About/>}/>
+
+      <Route path='/' element={start}/>
+      <Route path='/Home' element={start}/>
+
         <Route path='/Home' element={(<div className='mazeCards'>
         <Cards
           characters={characters}
@@ -63,7 +74,9 @@ function App () {
         />
       </div>)}/>
 
+        <Route path='/About' element={<About/>}/>
         <Route path='/Detail/:detailId' element={<Detail/>}/>
+        <Route path='*' element={<Page404/>}/>
 
 
       </Routes>
