@@ -36,7 +36,7 @@ function Detail() {
         <br />
     <div>
 
-    {character ?(<div style={{display:"flex"}}>
+    {character ?(<div style={{display:"flex", justifyContent:"space-between"}}>
 
       
       <div style={{color:"white"}}>

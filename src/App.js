@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import './App.css'
 import Cards from './components/Cards/Cards.jsx'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import Nav from './components/SearchBar/Nav'
 import About from './components/About/About'
 import Detail from './components/Detail/Detail'
 import Page404 from './components/Page404/Page404'
+import Form from './components/forms/Form'
 
 //luego investigar bien que seria el Outlet en react router
 function App () {
@@ -47,15 +48,16 @@ function App () {
     onClose={onClose}
   />
 </div>)
+const {pathname} = useLocation()
   return (
+    
     <div className='App' style={{ padding: '25px' }}>
 
       <img src='rick-morty-logo.png' alt='imagenes' style={{width:"100%", height:"auto", maxWidth:"800px"}}/>
       <div>
-        <Nav
+        {pathname !== "/" && <Nav
           onSearch={onSearch}
-          
-        />
+        />}
       </div>
       
       <br/>
@@ -64,15 +66,9 @@ function App () {
     
       <Routes>
 
-      <Route path='/' element={start}/>
+      <Route path='/' element={<Form/>}/>
       <Route path='/Home' element={start}/>
-
-        <Route path='/Home' element={(<div className='mazeCards'>
-        <Cards
-          characters={characters}
-          onClose={onClose}
-        />
-      </div>)}/>
+        
 
         <Route path='/About' element={<About/>}/>
         <Route path='/Detail/:detailId' element={<Detail/>}/>
