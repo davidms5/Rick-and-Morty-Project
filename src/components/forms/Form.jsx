@@ -12,6 +12,11 @@ const Form = () =>{
     const {name, value} = e.target;
     setUserData({...userData, [name]: value})
   }
+
+  //objeto donde iran los errores
+  const errores = {};
+
+
   return (
     <>
     <div style={{backgroundColor:"gray"}}>
