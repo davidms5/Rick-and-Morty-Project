@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 import Cards from './components/Cards/Cards.jsx'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import Nav from './components/SearchBar/Nav'
 import About from './components/About/About'
 import Detail from './components/Detail/Detail'
@@ -11,8 +11,16 @@ import Form from './components/forms/Form'
 //luego investigar bien que seria el Outlet en react router
 function App () {
 
-
+let email = "rafaelsanchez97.dm@gmail.com"
+let password = "abc123";
+let navigate = useNavigate()
   const [characters, setCharacters] = useState([])
+
+  const [access, setAccess] = useState(false)
+
+  useEffect(() =>{
+    !access && navigate("/");
+  }, [access])
 
   async function onSearch(element){
 
@@ -49,6 +57,19 @@ function App () {
   />
 </div>)
 const {pathname} = useLocation()
+
+const Login = (userData) =>{
+  if(userData.password === password && userData.email === email){
+    setAccess(true);
+    navigate("/Home");
+  }
+}
+
+const logOut = () =>{
+  access && setAccess(false);
+  navigate("/")
+}
+
   return (
     
     <div className='App' style={{ padding: '25px' }}>
@@ -57,6 +78,7 @@ const {pathname} = useLocation()
       <div>
         {pathname !== "/" && <Nav
           onSearch={onSearch}
+          logOut={logOut}
         />}
       </div>
       
@@ -66,7 +88,7 @@ const {pathname} = useLocation()
     
       <Routes>
 
-      <Route path='/' element={<Form/>}/>
+      <Route path='/' element={<Form login={Login}/>}/>
       <Route path='/Home' element={start}/>
         
 

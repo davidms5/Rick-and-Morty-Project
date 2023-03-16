@@ -7,6 +7,9 @@ import {NavLink} from 'react-router-dom';
 const Nav = (props) =>{
 
     const {onSearch} = props;
+    const handleLogOut = ()=>{
+        props.logOut()
+    }
     return (
         <Navigate>
             <div style={{flexGrow:1}}>
@@ -15,6 +18,7 @@ const Nav = (props) =>{
         <NavLink to="About" >About</NavLink>
         <NavLink to="Home" >Home</NavLink>
             </div>
+            <button onClick={handleLogOut}>logout</button>
         </Navigate>
     )
 }
