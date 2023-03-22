@@ -11,6 +11,19 @@ export default function validation(inputs){
   };
 
   if(!regexEmail.test(inputs.userName)){
-
+    errors.email = "Debe ser un email"
   };
+
+  if(inputs.email.length > 35){
+    errors.userName = "no puede tener mas de 35 caracteres"
+  };
+
+  if(!validatelettersAndNumbers.test(inputs.password)){
+    errors.password = "debe contener minimo 1 numero"
+  };
+  if(inputs.password.length < 6 || inputs.password.length > 10){
+    errors.password = "debe tener entre 6 y 10 caracteres"
+  }
+
+  return errors;
 }

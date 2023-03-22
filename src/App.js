@@ -20,6 +20,7 @@ let navigate = useNavigate()
 
   useEffect(() =>{
     !access && navigate("/");
+    // eslint-disable-next-line
   }, [access])
 
   async function onSearch(element){

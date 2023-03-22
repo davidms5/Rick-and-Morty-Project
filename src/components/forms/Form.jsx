@@ -26,7 +26,7 @@ const Form = (props) =>{
 
   function handleSubmit(e){
     e.preventDefault();
-    props.Login(userData);
+    props.login(userData);
   }
 
 
@@ -42,13 +42,13 @@ const Form = (props) =>{
         <label htmlFor="email">email</label>
 
         <input type="email" name="email" value={userData.email} onChange={handleChange}/>
-        {errors.email && (<p>{errors.email}</p>)}
+        {errors.email ? (<p>{errors.email}</p>) : null}
         <br />
 
         <label htmlFor="password"> password</label>
 
         <input type="password" name='password' value={userData.password} onChange={handleChange}/>
-        {errors.password && (<p>{errors.password}</p>)}
+        {errors.password ? (<p>{errors.password}</p>) : null}
         <br />
 
         <button type='submit'>login</button>
