@@ -11,7 +11,7 @@ import Form from './components/forms/Form'
 //luego investigar bien que seria el Outlet en react router
 function App () {
 
-let email = "rafaelsanchez97.dm@gmail.com"
+let email = "cosa@cosa.com"
 let password = "abc123";
 let navigate = useNavigate()
   const [characters, setCharacters] = useState([])
