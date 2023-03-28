@@ -17,6 +17,7 @@ const Nav = (props) =>{
         <SearchBar onSearch={(character) => onSearch(character)}/>
         <NavLink to="About" >About</NavLink>
         <NavLink to="Home" >Home</NavLink>
+        <NavLink to="favorites">favoritos</NavLink>
             </div>
             <button onClick={handleLogOut}>logout</button>
         </Navigate>

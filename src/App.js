@@ -7,6 +7,8 @@ import About from './components/About/About'
 import Detail from './components/Detail/Detail'
 import Page404 from './components/Page404/Page404'
 import Form from './components/forms/Form'
+import Favourites from './components/favourites/Favourites'
+//luego importae todo en un solo index en components
 
 //luego investigar bien que seria el Outlet en react router
 function App () {
@@ -89,10 +91,10 @@ const logOut = () =>{
     
       <Routes>
 
-      <Route path='/' element={<Form login={Login}/>}/>
-      <Route path='/Home' element={start}/>
+        <Route path='/' element={<Form login={Login}/>}/>
+        <Route path='/Home' element={start}/>
         
-
+        <Route path="/favorites" element={<Favourites />} />
         <Route path='/About' element={<About/>}/>
         <Route path='/Detail/:detailId' element={<Detail/>}/>
         <Route path='*' element={<Page404/>}/>
