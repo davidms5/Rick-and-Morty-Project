@@ -1,5 +1,5 @@
-const ADD_FAVOURITE= "ADD_FAVOURITE";
-const DELETE_FAVOURITE = "DELETE_FAVOURITE";
+export const ADD_FAVOURITE= "ADD_FAVOURITE";
+export const DELETE_FAVOURITE = "DELETE_FAVOURITE";
 
 export function addFavourite(character){
     return {
