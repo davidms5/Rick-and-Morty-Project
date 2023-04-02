@@ -1,7 +1,8 @@
-import {ADD_FAVOURITE, DELETE_FAVOURITE} from './actions'
+import {ADD_FAVOURITE, DELETE_FAVOURITE, FILTER, ORDER} from './actions'
 
 const initialState = {
     myFavorites: [],
+    allCharacters: [],
 }
 
 const reducer = (state = initialState, action)=>{
@@ -9,8 +10,20 @@ const reducer = (state = initialState, action)=>{
         case ADD_FAVOURITE:
             return {
                 ...state,
-                myFavorites:[...state.myFavorites, action.payload]
+                allCharacters:[...state.allCharacters, action.payload]
             };
+
+        case FILTER:
+            return {
+                ...state,
+                allCharacters: state.allCharacters.filter(item => item.gender === action.payload)
+            }
+
+        case ORDER:
+            return {
+                ...state,
+                //terminar esta parte
+            }
         
         case DELETE_FAVOURITE:
             return {
