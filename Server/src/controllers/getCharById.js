@@ -15,14 +15,13 @@ export const getCharById = async (req, res) =>{
             status: response.data.status,
             image: response.data.image
         }
-        
+        if(response.data.error){
+            res.status(404).send("Not Found")
+        }
         res.status(200).json(data)
         
     } catch (error) {
         //console.log(error); luego ver como mandar un 404 aqui
-        if(error.data){
-            res.status(404).send("Not Found")
-        };
         res.status(500).send(`error en el recibo de los datos: ${error.message}`)
     }
 
