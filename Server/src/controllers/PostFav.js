@@ -1,1 +1,0 @@
-//funciones postfav y deletefav
